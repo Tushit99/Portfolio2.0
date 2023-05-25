@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useContext } from 'react';
 import './App.css';
+import About from './components/About/About';
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/home/Home';
+import { ThemeContext } from './context/Contextprovider';
 
-function App() {
+function App() { 
+  const { theme } = useContext(ThemeContext);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ 
+      color: theme ? "black": "white" 
+      // backgroundColor: theme ? "white" : "rgb(38,53,80)"  
+     }}
+      >
+      <Navbar />   
+      <Home /> 
+      <About /> 
     </div>
   );
 }

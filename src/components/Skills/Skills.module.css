@@ -1,0 +1,220 @@
+/* ===================== */
+
+.box {
+  position: relative;
+  display: inline-block;
+  width: 90%;
+  padding: 30px 00px;
+  margin-top: 50px;  
+  color: unset;
+  /* background-color: rgba(255, 255, 255, 0.646);  */  
+  /* border: 2px solid white; */
+  background-color: unset; 
+  border-radius: 5px;
+  /* clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 90%); */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.454); 
+}
+
+
+
+ 
+/* ===================== */
+
+.h1 {
+  padding: 10px 0 30px 0;
+}
+
+/* --------------------------------- */  
+
+#box2 {
+  position: relative;
+  display: inline-block;
+  width: 120px;  
+  height: 120px;
+  padding: 20px;
+  margin-top: 60px;  
+  border: 2px solid rgba(0, 0, 133, 0.728) ;   
+  border-radius: 5px; 
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.297);  
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#box2::after {
+  content: "";
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); 
+} 
+
+#box2:hover {
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+  border: 2px solid rgba(0, 0, 255, 0.872) ;   
+}
+
+#box2:hover::after {
+  opacity: 1;
+}
+
+/* ---------------------------------- */
+
+.sklimg > div p {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  margin: 6px auto;  
+  text-align: center; 
+} 
+
+.sklimg > div:nth-child(1) {
+  color: rgb(255, 255, 52);
+}
+
+.sklimg > div:nth-child(2) {
+  color: rgb(255, 25, 25);
+}
+
+.sklimg > div:nth-child(3) {
+  color: rgb(52, 62, 255);
+}
+
+.sklimg > div:nth-child(4) {
+  color: rgb(127, 133, 255);
+}
+
+.sklimg > div:nth-child(5) {
+  color: rgb(78, 176, 33);
+}
+
+.sklimg > div:nth-child(6) {
+  color: rgb(17, 139, 75);
+}
+
+.sklimg > div:nth-child(8) {
+  color: rgb(113, 70, 182);
+}
+
+.sklimg > div:nth-child(9) {
+  color: rgb(192, 53, 53);
+}
+
+.sklimg > div:nth-child(11) {
+  color: rgb(97, 192, 53);
+}
+
+.sklimg > div:nth-child(12) {
+  color: rgb(23, 169, 155);
+}
+
+/* ----------------------------------- */
+
+.sklimg {
+  display: grid;
+  margin: 30px auto;
+  width: 100%; 
+  grid-template-columns: repeat(6, 1fr);
+}
+
+#icons{
+  text-align: center; 
+  margin: auto; 
+  cursor: pointer; 
+}
+
+
+/* tec  */
+
+.par2{
+  position: relative;
+  display: inline-block;
+  width: 90%;
+  padding: 20px 0px; 
+  color: unset;  
+  background-color: unset;
+  /* border: 2px solid white;   */
+  border-radius: 5px; 
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.454);
+} 
+
+#box5 {
+  position: relative;
+  display: inline-block;
+  width: 120px;  
+  height: 120px;
+  padding: 20px;
+  margin-top: 60px;  
+  border: 2px solid rgba(0, 0, 133, 0.728) ;   
+  border-radius: 5px; 
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.297);  
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#box5::after {
+  content: "";
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); 
+} 
+
+#box5:hover {
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+  border: 2px solid rgba(0, 0, 255, 0.872) ;   
+}
+
+#box5:hover::after {
+  opacity: 1;
+}
+
+.sklimgcolor {
+  display: grid;
+  margin: 30px auto;
+  width: 100%; 
+  grid-template-columns: repeat(6, 1fr);
+}
+
+
+/* tab  */
+ 
+@media screen and (max-width:920px) and (min-width: 550px) {
+    .sklimg{
+        grid-template-columns: repeat(4,1fr);
+    }
+    .sklimgcolor {
+      grid-template-columns: repeat(4,1fr);
+    } 
+}
+
+@media screen and (max-width:550px) and (min-width: 150px) {
+    .sklimg{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .sklimgcolor {
+        grid-template-columns: repeat(3,1fr); 
+    }
+    #box2{
+      width: 100px;  
+      padding: 20px 0; 
+    } 
+    #box5{
+      width: 100px;  
+      padding: 20px 0; 
+    } 
+}

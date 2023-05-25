@@ -1,0 +1,147 @@
+
+.main {
+  margin: 20px auto 0 auto;  
+  padding: 10px 0; 
+  display: flex;   
+  align-items:flex-start;     
+} 
+
+.main>div:nth-child(1){
+  flex: 3; 
+}
+
+.main>div:nth-child(2){
+  flex: 2; 
+  /* border: 2px solid rgb(255, 255, 255); */   
+}
+
+.abt{
+  height: 100vh;  
+  background-size: cover; 
+  object-fit: cover;
+  width: 100%;  
+  position: absolute;   
+  mix-blend-mode: color-burn;
+}
+ 
+
+.box { 
+  display: grid; 
+  width: 90%; 
+  padding: 50px 0px;
+  margin: auto; 
+  margin-top: 20px;
+  min-height: 100vh;
+  border-radius: 5px;
+   border-radius: 5px; 
+  text-align: center;   
+}  
+
+.box *{
+  z-index: 10;
+}
+
+.buttonbox{ 
+  margin: 30px auto auto auto; 
+  width: 50%;   
+  /* z-index: 8; */
+}
+
+.buttonbox button{
+  width: 100%;  
+  border-radius: 8px; 
+  padding: 6px 0;
+  font-size: x-large; 
+  cursor: pointer;   
+}
+ 
+
+.picspace{
+  position: relative; 
+  height: 300px; 
+  margin: auto; 
+}
+
+.circle{
+  background-color: rgba(0, 0, 0, 0.676);  
+  margin: auto; 
+  border: 2px solid rgba(36, 36, 255, 0.737);   
+  border-radius: 100%;  
+  width: 260px;   
+  height: 260px; 
+  overflow: hidden; 
+} 
+
+.circle img{
+  margin: auto;
+}
+
+  
+
+#im2{
+  width: 220px ;  
+}
+
+ .aboutdetail { 
+  color: rgb(47, 47, 47);
+  height: 200px 0; 
+  padding: 30px;
+  margin: auto; 
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: padding 0.4s;  
+  text-align: left; 
+  /* background-color: rgba(4, 32, 54, 0.861);  */
+  border-radius: 20px;
+  font-size: large;
+} 
+
+.headline > h1 {
+  font-size: 40px;
+  text-shadow: 0.08em 0.08em 0.08em rgb(0, 55, 255);
+ }
+
+/* ======================================================== */
+
+
+
+
+
+/* ========================================================== */
+
+@media screen and (min-width: 550px) and (max-width: 920px) {
+  .main {
+    display: grid;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+  }
+  .main > * {
+    margin: auto;
+    text-align: center;
+   }
+  .picspace{
+    margin-top: 60px;
+  }
+  
+}
+
+@media screen and (min-width: 150px) and (max-width: 550px) {
+    .main {
+      display: grid;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+    }
+    .main > * {
+      margin: auto;
+      text-align: center;
+     } 
+    .picspace{
+      margin-top: 60px;
+    }
+  }
+  
+ 
+
+
+
