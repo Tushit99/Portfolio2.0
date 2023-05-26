@@ -13,14 +13,14 @@ const About = () => {
     window.open(
       "https://drive.google.com/file/d/1QDtKhJGLNZtCdd9Ia-8mJ1tMNs5fm-hg/view?usp=sharing"
     );
-  }; 
+  };
 
-  return ( 
+  return (
     <div id="about" >
       <div className={abt.box}>
         <h5> Get to Know </h5>
-        <Heading as="h2" size="2xl" fontWeight={400}> 
-          About 
+        <Heading as="h2" size="2xl" fontWeight={400}>
+          About
         </Heading>
         <div className={abt.main}>
           <div className={abt.aboutdetail}>
@@ -38,13 +38,13 @@ const About = () => {
             <div className={abt.buttonbox}>
               <div class={abt.container}>
                 <button className={abt.butn} onClick={handleOpenLink}>
-                  <a href={resumeme} target="_blank" download={"Tushit_Saxena_resume"} >Resume</a>  
-                </button>   
+                  <a href={resumeme} target="_blank" download={"Tushit_Saxena_resume"} >Resume</a>
+                </button>
               </div>
             </div>
           </div>
-          <div className={abt.picspace} >  
-          <img src={bgimg} alt="backimg" className={abt.profileback} />
+          <div className={abt.picspace} >
+            <img src={bgimg} alt="backimg" className={abt.profileback} />
             <div className={abt.circle}>
               <img
                 src={mypic}
@@ -52,9 +52,7 @@ const About = () => {
                 className="home-img"
                 alt="myimages"
               />
-            </div>
-            {/* <div className={abt.bgim} style={{backgroundImage: `url(${bgimg})`}}>  */}
-            {/* </div> */}
+            </div> 
           </div>
         </div>
       </div>

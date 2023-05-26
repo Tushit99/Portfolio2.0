@@ -1,8 +1,14 @@
 .App {
   text-align: center;  
   z-index: 2; 
-  position: relative;   
+  margin: 0; 
+  padding: 0; 
+  position: relative;    
+  transition: background-color 1.8s, color 1.8s ; 
 }  
 
+/* *{
+  max-width: 100%; 
+} */
 
 

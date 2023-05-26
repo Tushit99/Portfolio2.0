@@ -14,14 +14,14 @@
 }
 
 .box1 {
-  width: 90px;
+  width: 110px;
   position: relative;
 }
 
 .box1 img {
   width: 100%;
   position: absolute;
-  top: -14px;
+  top: -20px;
   left: 0;
 }
 
