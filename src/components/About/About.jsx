@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import abt from "./About.module.css";
 import { Button, Heading } from "@chakra-ui/react";
-// import resumeme from "../Image/resumeme.pdf";
+import resumeme from "../Image/resumeme.pdf";
 import mypic from "../Image/tushitgo.png";
 import { ThemeContext } from "../../context/Contextprovider";
+import bgimg from "../Image/orange.png"
 
 const About = () => {
   const { theme } = useContext(ThemeContext);
@@ -12,10 +13,10 @@ const About = () => {
     window.open(
       "https://drive.google.com/file/d/1QDtKhJGLNZtCdd9Ia-8mJ1tMNs5fm-hg/view?usp=sharing"
     );
-  };
+  }; 
 
-  return (
-    <div id="about" className={abt.abt} >
+  return ( 
+    <div id="about" >
       <div className={abt.box}>
         <h5> Get to Know </h5>
         <Heading as="h2" size="2xl" fontWeight={400}> 
@@ -36,7 +37,9 @@ const About = () => {
             </p>
             <div className={abt.buttonbox}>
               <div class={abt.container}>
-                <button>Resume</button>
+                <button className={abt.butn} onClick={handleOpenLink}>
+                  <a href={resumeme} download={"Tushit_Saxena_resume"} >Resume</a>  
+                </button>   
               </div>
             </div>
           </div>
@@ -49,6 +52,8 @@ const About = () => {
                 alt="myimages"
               />
             </div>
+            {/* <div className={abt.bgim} style={{backgroundImage: `url(${bgimg})`}}>  */}
+            {/* </div> */}
           </div>
         </div>
       </div>

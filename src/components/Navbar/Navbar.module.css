@@ -7,7 +7,7 @@
   top: 0;
   color: rgb(0, 0, 0);
   left: 0;
-  right: 0;
+  right: 0; 
   z-index: 12;
   /* background-color: rgba(240, 248, 255, 0); */
   /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;   */
@@ -183,7 +183,7 @@
   .topoption > div:hover {
     -webkit-transform: scale(1.25, 1.25);
     transform: scale(1.25, 1.25);
-    color: rgb(234, 198, 22); 
+    color: rgb(201, 123, 33); 
   }
   
   .topoption > div:active {

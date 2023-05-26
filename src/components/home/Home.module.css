@@ -1,3 +1,10 @@
+.home{
+  position: relative;  
+  width: 100%;  
+  z-index: -3;
+  background-size: cover; 
+}
+
 .back {
   position: relative;
   min-height: 100vh;
@@ -10,7 +17,7 @@
   padding: 0 30px;
 }  
 
-.backimage{
+/* .backimage{
   height: 100vh; 
   width: 100%; 
   z-index: -1; 
@@ -18,6 +25,16 @@
   left: 0; 
   position: absolute;
   object-fit: cover;  
+} */ 
+
+.bottomimg{
+  position: absolute;   
+  bottom: 0; 
+  left: 0; 
+  right: 0;   
+  width: 100%; 
+  object-fit: cover;  
+  z-index: -2; 
 }
  
 
@@ -30,10 +47,10 @@
 
 .switchbox {
   position: fixed;
-  bottom: 30px;
-  left: 30px;
-  z-index: 2;
-}
+  bottom: 30px; 
+  left: 30px; 
+  z-index: 24;
+} 
 
 .box2 {
   display: flex;

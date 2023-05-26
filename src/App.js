@@ -11,8 +11,8 @@ function App() {
 
   return (
     <div className="App" style={{ 
-      color: theme ? "black": "white" 
-      // backgroundColor: theme ? "white" : "rgb(38,53,80)"  
+      color: theme ? "black": "white" ,
+      backgroundColor: theme ? "rgb(227,231,235)" : "rgba(25, 33, 46)"  
      }}
       >
       <Navbar />   

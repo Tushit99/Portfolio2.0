@@ -1,25 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import style from "./Home.module.css";
-import { Box, Heading, Stack, Switch } from "@chakra-ui/react";
+import { Heading, Stack, Switch } from "@chakra-ui/react";
 import { ThemeContext } from "../../context/Contextprovider";
-import img from "../../img/anboy.png";
+import img from "../../img/anboy.png";  
+import bgimg from "../Image/imdg.png";  
+import day from "../Image/day.jpg"; 
+import night from "../Image/night.jpg"; 
+
 
 const Home = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  return (
-    <div>
-      <img className={style.backimage} src={theme
+  return ( 
+    <div className={style.home} style={{backgroundImage: `url(${theme ? day:night})`}}> 
+      <img src={bgimg} className={style.bottomimg} alt="backimg" />
+      {/* <img className={style.backimage} src={theme
            ? 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-           : 'https://wallpaperaccess.com/full/191364.jpg'} alt="" />
-      <div
-        className={style.back}
-      // style={{
-      //   backgroundImage: theme
-      //     ? "url('https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"
-      //     : "url('https://wallpaperaccess.com/full/191364.jpg')",
-      // }}
-      >
+           : 'https://wallpaperaccess.com/full/191364.jpg'} alt="" /> */}
+      <div className={style.back} >
         <div className={style.box} style={{ color: theme ? "black" : "white" }}>
           <Heading as="h4" size="md" className={style.animate} fontWeight={400}>
             Hello I'm
@@ -38,18 +36,17 @@ const Home = () => {
               theme
                 ? "https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=1000&color=000000&center=true&vCenter=true&width=435&lines=Full+Stack+Web+Developer;MERN+Stack+Developer"
                 : "https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=1000&color=FFFFFF&center=true&vCenter=true&width=435&lines=Full+Stack+Web+Developer;MERN+Stack+Developer"
-            }
+            } 
             alt="Typing SVG"
           />
           <h4 className={style.h4}>
             I am a Full Stack Developer, passionate about building digital
             products that improve everyday experience for people.
-            <span>
-              {" "}
+            <span> 
               I love to work on exciting projects that test what I've learnt,
               whilst being exposed to the power and potential of the
               ever-evolving technologies around us.
-            </span>{" "}
+            </span>
             I have a specialization in developing websites and web applications
             using HTML, CSS, JavaScript, React, and Node.js.
           </h4>
@@ -59,9 +56,9 @@ const Home = () => {
         </div>
       </div>
       <div className={style.switchbox}>
-        <Stack align="center" direction="row">
-          <Switch colorScheme="blackAlpha" onChange={() => toggleTheme()} size="lg" />
-        </Stack>
+        <Stack align="center" direction="row" >
+          <Switch colorScheme="blackAlpha" zIndex={23} onChange={() => toggleTheme()} size="lg" />
+        </Stack> 
       </div>
     </div>
   );
