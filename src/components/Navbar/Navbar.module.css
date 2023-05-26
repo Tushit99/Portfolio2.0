@@ -151,7 +151,8 @@
     justify-content: flex-end;
     transition: all 0.4s ease-in-out;
     flex: 3; 
-    gap: 24px;
+    gap: 24px; 
+    color: rgb(173, 108, 51); 
     padding-right: 20px; 
   }
   
@@ -183,12 +184,12 @@
   .topoption > div:hover {
     -webkit-transform: scale(1.25, 1.25);
     transform: scale(1.25, 1.25);
-    color: rgb(201, 123, 33); 
+    color: rgb(225, 132, 25); 
   }
   
   .topoption > div:active {
-    transform: scale(1);
-    color: white;
+    transform: scale(0.8);
+    /* color: white; */
   }
   
   .topoption > div:hover::after {

@@ -4,7 +4,7 @@ import { Button, Heading } from "@chakra-ui/react";
 import resumeme from "../Image/resumeme.pdf";
 import mypic from "../Image/tushitgo.png";
 import { ThemeContext } from "../../context/Contextprovider";
-import bgimg from "../Image/orange.png"
+import bgimg from "../Image/box.png"
 
 const About = () => {
   const { theme } = useContext(ThemeContext);
@@ -38,12 +38,13 @@ const About = () => {
             <div className={abt.buttonbox}>
               <div class={abt.container}>
                 <button className={abt.butn} onClick={handleOpenLink}>
-                  <a href={resumeme} download={"Tushit_Saxena_resume"} >Resume</a>  
+                  <a href={resumeme} target="_blank" download={"Tushit_Saxena_resume"} >Resume</a>  
                 </button>   
               </div>
             </div>
           </div>
-          <div className={abt.picspace}>
+          <div className={abt.picspace} >  
+          <img src={bgimg} alt="backimg" className={abt.profileback} />
             <div className={abt.circle}>
               <img
                 src={mypic}
