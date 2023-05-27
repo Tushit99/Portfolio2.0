@@ -4,6 +4,7 @@ import {
   Heading,
   Button,
   Collapse,
+  Code,
 } from "@chakra-ui/react";
 import herolog from "../hiringHerosimg/helogo.png";
 import jcrew from "../jcrewPictures/jcrew.png";
@@ -37,8 +38,7 @@ import ffsignup from "../fashon/sign.png";
 import ffcart from "../fashon/cart.png";
 import ffooter from "../fashon/footer.png";
 import fflogo from "../fashon/logo.png";
-import Detail from "./detail/Detail";
-
+ 
 const D1 = [
   {
     id: 1,
@@ -117,6 +117,7 @@ const D1 = [
 
 const Project = ({ project }) => {
   const [show, setShow] = useState(false);
+  const arr = ["purple", "red", "green", "blue", "pink", "purple", "red", "green", "blue", "pink"]
 
   const handleToggle = () => setShow(!show);
 
@@ -137,15 +138,20 @@ const Project = ({ project }) => {
         {D1.map((e) => (
           <div key={e.id} className={pro.projects}>
             <div className={pro.pro_left}>
-              <img
+              <img  
                 src={e.logo}
                 alt="imgLink"
-                className={pro.logos}  
+                className={pro.logos}
               />
               <div padding="10px 20px" textAlign="left">
-                {/* <Detail text={e.description} /> */} 
+                {/* <Detail text={e.description} /> */}
                 <p>{e.description}</p>
-              </div> 
+              </div>
+              <div className={pro.stack}> TecStack: 
+                {e.tec?.map((x, i) => (
+                  <Code colorScheme={arr[i]} children={x} />
+                ))}
+              </div>
             </div>
             <div className={pro.pro_right}>
               <img src={e.image} alt="images" />
