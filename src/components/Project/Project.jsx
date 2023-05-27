@@ -1,21 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import pro from "./project.module.css";
 import {
-  Grid,
-  Flex,
-  Card,
-  CardBody,
-  Image,
   Heading,
-  CardFooter,
   Button,
-  Box,
-  Stack,
-  Badge,
+  Collapse,
 } from "@chakra-ui/react";
-import herolog from "../hiringHerosimg/helogo.png"
+import herolog from "../hiringHerosimg/helogo.png";
 import jcrew from "../jcrewPictures/jcrew.png";
-import hemain from "../hiringHerosimg/main.png"
+import hemain from "../hiringHerosimg/main.png";
 import jc from "../jcrewPictures/jcrewhome.png";
 import mainhero from "../hiringHerosimg/mid.png";
 
@@ -30,7 +22,6 @@ import jcmid from "../jcrewPictures/jchome.png";
 import jcpayment from "../jcrewPictures/payment.png";
 import jcsort from "../jcrewPictures/sorting.png";
 import Prodrawer from "../ProjectDrawer.jsx/Prodrawer";
-import Blog from "../Readbox/Blog";
 
 import reladmin from "../relience/relAdmin.png";
 import relCart from "../relience/relCart.png";
@@ -39,17 +30,14 @@ import relHome from "../relience/relHome.png";
 import relProduct from "../relience/relProduct.png";
 import relLogo from "../relience/relLogo.png";
 
-
-
-import ffhome from "../fashon/home.png"
-import ffproduct from "../fashon/product.png"
-import fflogin from "../fashon/login.png"
-import ffsignup from "../fashon/sign.png"
-import ffcart from "../fashon/cart.png"
-import ffooter from "../fashon/footer.png"
-import fflogo from "../fashon/logo.png"
-
-
+import ffhome from "../fashon/home.png";
+import ffproduct from "../fashon/product.png";
+import fflogin from "../fashon/login.png";
+import ffsignup from "../fashon/sign.png";
+import ffcart from "../fashon/cart.png";
+import ffooter from "../fashon/footer.png";
+import fflogo from "../fashon/logo.png";
+import Detail from "./detail/Detail";
 
 const D1 = [
   {
@@ -122,118 +110,149 @@ const D1 = [
       { im: fflogin, name: "Login" },
       { im: ffsignup, name: "SiginUp" },
       { im: ffcart, name: "Cart" },
-      { im: ffooter, name: "Footer" }, 
+      { im: ffooter, name: "Footer" },
     ],
   },
 ];
 
 const Project = ({ project }) => {
+  const [show, setShow] = useState(false);
 
-  const handlegitlink = (url) => {
-    window.open(url, "_blank");
-  };
+  const handleToggle = () => setShow(!show);
 
-  const handlevercelLink = (url) => {
-    window.open(url, "_blank");
-  };
+  // const handlegitlink = (url) => {
+  //   window.open(url, "_blank");
+  // };
+
+  // const handlevercelLink = (url) => {
+  //   window.open(url, "_blank");
+  // };
 
   return (
-    <div ref={project} className={pro.box} >
+    <div ref={project} className={pro.box}>
       <Heading as="h2" size="2xl" color={"white"} fontWeight={400}>
         Projects
       </Heading>
-      <Grid
-        id="projects"
-        templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
-        padding="20px 30px"
-      >
+      <div className={pro.projestbox}>
         {D1.map((e) => (
-          <div
-            key={e.id}
-            className="project-card"
-          >
-            <Card
-              color="white"
-              boxShadow="md"
-              variant="solid"
-              w={{ base: "100%", md: "90%" }}
-              m="20px auto"
-              textAlign="center"
-              backgroundColor="unset"
-              border={"2px"}
-              borderColor={"rgba(9, 39, 63, 0.603)"}
-              className={pro.probox}
-            >
+          <div key={e.id} className={pro.projects}>
+            <div className={pro.pro_left}>
               <img
                 src={e.logo}
-                alt="imgLink" 
-                className={pro.imghover} 
-                style={{ margin: "4px auto", height: "64px" }}
+                alt="imgLink"
+                className={pro.logos}  
               />
-              <h6 className="project-title"> {e.title} </h6>
-              <Box padding="10px 20px" textAlign="left" >
-                <Blog text={e.description} />
-              </Box>
-              <Flex
-                alignItems="center"
-                gap="10px"
-                wrap="wrap"
-                textAlign="left"
-                width="90%"
-                margin="auto"
-              >
-                <Heading className="project-tech-stack" as="h4" size="sm" color="white" fontWeight={500}>
-                  TecStack:
-                </Heading>
-                {e.tec.map((x, i) => (
-                  <Stack direction='row' margin="0" key={i}>
-                    <Badge colorScheme='purple' np>
-                      {x}
-                    </Badge>
-                  </Stack>
-                ))}
-              </Flex>
-              <CardBody>
-                <Image src={e.image} className={pro.showimg} alt="imgLink" borderRadius="lg" />
-              </CardBody>
-
-              <CardFooter  >
-                <Flex align="center" justifyContent="space-evenly" w="100%" margin="auto" gap="4px">
-                  <Prodrawer title={e.title} fullImg={e.fullImg} />
-                  <Button
-                    variant="outline"
-                    colorScheme="blue"
-                    className="project-github-link"
-                    margin="0"
-                    fontSize={{ base: "md", md: "lg" }}
-                    padding={{ base: "10px", md: "14px" }}
-                    onClick={() => {
-                      handlegitlink(e.github);
-                    }}
-                  >
-                    Github
-                  </Button>
-                  <Button
-                    colorScheme="blue"
-                    variant="outline"
-                    margin="0"
-                    className="project-deployed-link"
-                    fontSize={{ base: "md", lg: "lg" }}
-                    padding={{ base: "10px", md: "14px" }}
-                    onClick={() => {
-                      handlevercelLink(e.netlify);
-                    }}
-                  >
-                    Link
-                  </Button>
-                </Flex>
-              </CardFooter>
-            </Card>
+              <div padding="10px 20px" textAlign="left">
+                {/* <Detail text={e.description} /> */} 
+                <p>{e.description}</p>
+              </div> 
+            </div>
+            <div className={pro.pro_right}>
+              <img src={e.image} alt="images" />
+            </div>
           </div>
         ))}
-      </Grid>
+      </div>
     </div>
   );
 };
 
 export default Project;
+
+// {/* <Card
+//   boxShadow="md"
+//   variant="solid"
+//   w={{ base: "100%", md: "90%" }}
+//   m="20px auto"
+//   textAlign="center"
+//   backgroundColor="unset"
+//   border={"2px"}
+//   borderColor={"rgba(9, 39, 63, 0.603)"}
+// >
+//   <img
+//     src={e.logo}
+//     alt="imgLink"
+//     className={pro.imghover}
+//     style={{ margin: "4px auto", height: "64px" }}
+//   />
+//   <h6 className="project-title"> {e.title} </h6>
+//   <div padding="10px 20px" textAlign="left">
+//     <Collapse startingHeight={20} in={show}>
+//       {e.description}
+//     </Collapse>
+//     <Button size="sm" onClick={handleToggle} mt="1rem">
+//       Show {show ? "Less" : "More"}
+//     </Button>
+//   </div>
+//   <Flex
+//     alignItems="center"
+//     gap="10px"
+//     wrap="wrap"
+//     textAlign="left"
+//     width="90%"
+//     margin="auto"
+//   >
+//     <Heading
+//       className="project-tech-stack"
+//       as="h4"
+//       size="sm"
+//       color="white"
+//       fontWeight={500}
+//     >
+//       TecStack:
+//     </Heading>
+//     {e.tec.map((x, i) => (
+//       <Stack direction="row" margin="0" key={i}>
+//         <Badge colorScheme="purple" np>
+//           {x}
+//         </Badge>
+//       </Stack>
+//     ))}
+//   </Flex>
+//   <CardBody>
+//     <Image
+//       src={e.image}
+//       className={pro.showimg}
+//       alt="imgLink"
+//       borderRadius="lg"
+//     />
+//   </CardBody>
+
+//   <CardFooter>
+//     <Flex
+//       align="center"
+//       justifyContent="space-evenly"
+//       w="100%"
+//       margin="auto"
+//       gap="4px"
+//     >
+//       <Prodrawer title={e.title} fullImg={e.fullImg} />
+//       <Button
+//         variant="outline"
+//         colorScheme="blue"
+//         className="project-github-link"
+//         margin="0"
+//         fontSize={{ base: "md", md: "lg" }}
+//         padding={{ base: "10px", md: "14px" }}
+//         onClick={() => {
+//           handlegitlink(e.github);
+//         }}
+//       >
+//         Github
+//       </Button>
+//       <Button
+//         colorScheme="blue"
+//         variant="outline"
+//         margin="0"
+//         className="project-deployed-link"
+//         fontSize={{ base: "md", lg: "lg" }}
+//         padding={{ base: "10px", md: "14px" }}
+//         onClick={() => {
+//           handlevercelLink(e.netlify);
+//         }}
+//       >
+//         Link
+//       </Button>
+//     </Flex>
+//   </CardFooter>
+// </Card> */}

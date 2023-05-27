@@ -18,21 +18,15 @@ const Prodrawer = ({ fullImg, title }) => {
   const btnRef = useRef();
 
   return (
-    <div style={{backgroundColor:"black"}}>
-      <Button
-        ref={btnRef}
-        colorScheme="blue"
-        variant="outline"
-        margin="0px" 
-        fontSize={{base:"md", lg:"lg"}} 
-        padding={{base:"10px", md:"14px"}}
-        onClick={onOpen}  
-      > 
+    <div style={{ backgroundColor: "black" }}>
+      <Button 
+        onClick={onOpen}
+      >
         View
       </Button>
       <Drawer
         isOpen={isOpen}
-        placement="top"  
+        placement="top"
         onClose={onClose}
         finalFocusRef={btnRef}
       >
@@ -44,8 +38,8 @@ const Prodrawer = ({ fullImg, title }) => {
           <DrawerBody
             w="90%"
             padding="20px"
-            display="grid" 
-            margin="auto" 
+            display="grid"
+            margin="auto"
             gridTemplateColumns={{
               base: "repeat(1, 1fr)",
               lg: "repeat(2, 1fr)",
@@ -53,7 +47,7 @@ const Prodrawer = ({ fullImg, title }) => {
             gap={3}
           >
             {fullImg.map((z) => (
-              <Box 
+              <Box
                 backgroundColor="rgba(35, 40, 84, 0.614)"
                 borderWidth="2px"
                 borderColor="rgb(0, 9, 104)"

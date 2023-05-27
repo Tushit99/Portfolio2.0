@@ -9,9 +9,7 @@
   left: 0;
   right: 0; 
   z-index: 12;
-  /* background-color: rgba(240, 248, 255, 0); */
-  /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;   */
-}
+ }
 
 .box1 {
   width: 110px;
@@ -23,29 +21,7 @@
   position: absolute;
   top: -20px;
   left: 0;
-}
-
-/* .box2 {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: space-around;
-  font-weight: bolder;
-  font-size: large;
-} */
-
-/* .bgimg {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-image: url("https://images.pexels.com/photos/1004665/pexels-photo-1004665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: -1;
-} */
+} 
 
 /* button */
 

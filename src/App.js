@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/home/Home';
 import { ThemeContext } from './context/Contextprovider';
 import Skills from './components/Skills/Skills';
+import Project from './components/Project/Project';
 
 function App() { 
   const { theme } = useContext(ThemeContext);
@@ -20,6 +21,7 @@ function App() {
       <Home /> 
       <About />  
       <Skills /> 
+      <Project /> 
     </div>
   );
 }

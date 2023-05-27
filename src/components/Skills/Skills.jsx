@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import skl from "./Skills.module.css"
 import { SiCodesandbox, SiGit, SiJavascript, SiMaterialui, SiTailwindcss } from 'react-icons/si'
 import { SiHtml5 } from 'react-icons/si'
@@ -25,10 +25,12 @@ import { AiFillCodeSandboxCircle } from 'react-icons/ai'
 import replet from "./imgs/replet.png"
 import cylic from "../Image/cyclic.png"
 import render from "../Image/render.png"
+import { ThemeContext } from '../../context/Contextprovider'
 
 
 
-const Skills = ({ skill }) => {
+const Skills = ({ skill }) => { 
+    const { theme } = useContext(ThemeContext); 
 
     const handleopen = (link) => {
         window.open(link, "_blank")
@@ -37,7 +39,7 @@ const Skills = ({ skill }) => {
     return (
         <div className={skl.skills}>
             <div ref={skill} >
-                <Heading as='h2' size='2xl' color={"white"} fontWeight={400}> Tech Stacks </Heading>
+                <Heading as='h2' size='2xl' color={theme ? "black":"white"} fontWeight={400}> Tech Stacks </Heading>
                 <div className={skl.sklimg}>
                     <div className={skl.showbox} onClick={() => handleopen("https://developer.mozilla.org/en-US/docs/Web/JavaScript")} >
                         <SiJavascript size="50px" color='rgb(239,216,29)' />
@@ -84,18 +86,18 @@ const Skills = ({ skill }) => {
                         <SiTypescript size="50px" color='rgb(49,120,198)' />
                         <p> Typescript </p>
                     </div>
-                    <div className={skl.showbox} onClick={() => handleopen("https://www.typescriptlang.org/")} >
+                    <div className={skl.showbox} onClick={() => handleopen("https://mui.com/")} >
                         <SiMaterialui size="50px" color='rgb(49,120,198)' />
                         <p> Materialui </p>
                     </div>
-                    <div className={skl.showbox} onClick={() => handleopen("https://www.typescriptlang.org/")} >
+                    <div className={skl.showbox} onClick={() => handleopen("https://tailwindcss.com/")} >
                         <SiTailwindcss size="50px" color='rgb(49,120,198)' />
                         <p> Tailwind CSS </p>
                     </div>
                 </div>
             </div>
             <div className={skl.par2}>
-                <Heading as='h2' size='2xl' color={"white"} fontWeight={400}> Tools Section </Heading>
+                <Heading as='h2' size='2xl' color={theme ? "black":"white"} fontWeight={400}> Tools Section </Heading>
                 <div className={skl.sklimg}>
                     <div className={skl.showbox} onClick={() => handleopen("https://github.com/")} >
                         <img src={git} alt="git-img" width="50px" />
@@ -137,11 +139,11 @@ const Skills = ({ skill }) => {
                         <img src={render} alt="render-img" width="50px" />
                         <p> Render </p>
                     </div>
-                    <div className={skl.showbox} onClick={() => handleopen("https://github.com/")}  >
+                    <div className={skl.showbox} onClick={() => handleopen("https://git-scm.com/")}  >
                         <SiGit size="50px" color='black' />
                         <p> Git </p>
                     </div>
-                    <div className={skl.showbox} onClick={() => handleopen("https://github.com/")}  >
+                    <div className={skl.showbox} onClick={() => handleopen("https://codepen.io/")}  >
                         <SiCodesandbox size="50px" color='black' />
                         <p> Code Pen </p>
                     </div>

@@ -3,6 +3,7 @@ import style from "./Home.module.css";
 import { Heading, Stack, Switch } from "@chakra-ui/react";
 import { ThemeContext } from "../../context/Contextprovider";
 import img from "../../img/anboy.png"; 
+import lap1 from "./imgbox/lap3.png"; 
 import day from "./imgbox/daypart.jpg";
 import night from "./imgbox/nightpart.jpg";
 
@@ -42,12 +43,12 @@ const Home = () => {
           </h4>
         </div>
         <div className={style.box2}>
-          <img src={img} alt="animeboy" />
+          <img src={lap1} alt="animeboy" />
         </div>
       </div>
       <div className={style.switchbox}>
         <Stack align="center" direction="row" >
-          <Switch colorScheme="blackAlpha" onChange={() => toggleTheme()} size="lg" />
+          <Switch colorScheme="blackAlpha" onChange={() => toggleTheme()} size="lg"  />
         </Stack>
       </div>
     </div>
