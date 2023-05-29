@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import style from "./Home.module.css";
 import { Heading, Stack, Switch } from "@chakra-ui/react";
 import { ThemeContext } from "../../context/Contextprovider";
-import img from "../../img/anboy.png"; 
 import lap1 from "./imgbox/lap3.png"; 
 import day from "./imgbox/daypart.jpg";
 import night from "./imgbox/nightpart.jpg";

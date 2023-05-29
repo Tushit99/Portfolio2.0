@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import abt from "./About.module.css";
-import { Button, Heading } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import resumeme from "../Image/resumeme.pdf";
 import mypic from "../Image/tushitgo.png";
 import { ThemeContext } from "../../context/Contextprovider";

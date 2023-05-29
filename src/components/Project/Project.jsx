@@ -1,11 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import pro from "./project.module.css";
-import {
-  Heading,
-  Button,
-  Collapse,
-  Code,
-} from "@chakra-ui/react";
+import { Heading, Button, Code } from "@chakra-ui/react";
 import herolog from "../hiringHerosimg/helogo.png";
 import jcrew from "../jcrewPictures/jcrew.png";
 import hemain from "../hiringHerosimg/main.png";
@@ -38,17 +33,18 @@ import ffsignup from "../fashon/sign.png";
 import ffcart from "../fashon/cart.png";
 import ffooter from "../fashon/footer.png";
 import fflogo from "../fashon/logo.png";
- 
+import { ThemeContext } from "../../context/Contextprovider";
+
 const D1 = [
   {
     id: 1,
     image: relHome,
-    title: "reliance",
+    title: "_Reliance Digital_",
     description:
       "Reliance Digital is used for buying the electrical products, Home Appliances & other kind of products. Digital Express Digital Stores are bigger in size than the other format Digital Xpress Mini Stores.",
     logo: relLogo,
     github: "https://github.com/imukeshkaushal/relianceDigital_clone",
-    tec: ["HTML", "CSS", "Javascript", "Chakra", "HTML"],
+    tec: ["HTML", "CSS", "React", "Javascript"],
     netlify: "https://reliance-digital-beryl.vercel.app/",
     fullImg: [
       { im: relHome, name: "Home" },
@@ -61,7 +57,7 @@ const D1 = [
   {
     id: 2,
     image: jc,
-    title: "J.Crew",
+    title: "_JCrew_",
     logo: jcrew,
     description:
       "The company offers an assortment of women's, men's, and children's apparel and accessories, including swimwear, outerwear, loungewear, bags, sweaters, denim, dresses, suiting, jewelry, and shoes. ",
@@ -79,7 +75,7 @@ const D1 = [
   {
     id: 3,
     image: hemain,
-    title: "Fiverr",
+    title: "_Fiverr_",
     description:
       "Fiverr is a global online marketplace for freelance services. Fiverr's platform connects freelancers to people or businesses looking to hire. The unique term for a service offered by a seller on Fiverr is called a 'Gig. ",
     logo: herolog,
@@ -97,10 +93,10 @@ const D1 = [
   {
     id: 4,
     image: ffhome,
-    title: "Fashion Frenzy",
+    title: "_Fashion Frenzy_",
     logo: fflogo,
     description:
-      "Anthropologie is a unique, full-lifestyle shopping destination, with a mostly exclusive assortment of clothing, shoes, accessories, beauty, furniture, home décor, garden, bridal, and more.",
+      "It is a clone of Anthropologie. Anthropologie is a unique, full-lifestyle shopping destination, with a mostly exclusive assortment of clothing, shoes, accessories, beauty, furniture, home décor, garden, bridal, and more.",
     tec: ["React", "CSS", "nodeJs", "MongoDB", "express"],
     github: "https://github.com/suhail3535/alive-run-138",
     netlify: "https://frontend-suhail3535.vercel.app/",
@@ -116,46 +112,149 @@ const D1 = [
 ];
 
 const Project = ({ project }) => {
-  const [show, setShow] = useState(false);
-  const arr = ["purple", "red", "green", "blue", "pink", "purple", "red", "green", "blue", "pink"]
+  const { theme } = useContext(ThemeContext);
 
-  const handleToggle = () => setShow(!show);
+  const arr = [
+    "purple",
+    "red",
+    "green",
+    "blue",
+    "pink",
+    "purple",
+    "red",
+    "green",
+    "blue",
+    "pink",
+  ];
 
-  // const handlegitlink = (url) => {
-  //   window.open(url, "_blank");
-  // };
+  const handlegitlink = (url) => {
+    window.open(url, "_blank");
+  };
 
-  // const handlevercelLink = (url) => {
-  //   window.open(url, "_blank");
-  // };
+  const handlevercelLink = (url) => {
+    window.open(url, "_blank");
+  };
 
   return (
-    <div ref={project} className={pro.box}>
-      <Heading as="h2" size="2xl" color={"white"} fontWeight={400}>
+    <div
+      ref={project}
+      style={{ color: theme ? "black" : "white" }}
+      className={pro.box}
+    >
+      <Heading
+        as="h2"
+        size="2xl"
+        color={theme ? "black" : "white"}
+        fontWeight={400}
+      >
         Projects
       </Heading>
       <div className={pro.projestbox}>
-        {D1.map((e) => (
+        {D1.map((e, i) => (
           <div key={e.id} className={pro.projects}>
-            <div className={pro.pro_left}>
-              <img  
-                src={e.logo}
-                alt="imgLink"
-                className={pro.logos}
-              />
-              <div padding="10px 20px" textAlign="left">
-                {/* <Detail text={e.description} /> */}
-                <p>{e.description}</p>
+            {i % 2 == 0 ? (
+              <div>
+                <div className={pro.pro_left}>
+                  <h1 className={pro.logos}>{e.title}</h1>
+                  <div className={pro.des}>
+                    <p>{e.description}</p>
+                  </div>
+                  <div className={pro.stack}>
+                    {" "}
+                    TecStack:
+                    {e.tec?.map((x, i) => (
+                      <Code key={i + 1} colorScheme={arr[i]} children={x} />
+                    ))}
+                  </div>
+                  <div className={pro.drawer}>
+                    <div>
+                      <Prodrawer title={e.title} fullImg={e.fullImg} />
+                    </div>
+                    <div>
+                      <Button
+                        variant="outline"
+                        colorScheme="orange"
+                        fontSize={{ base: "md", md: "lg" }}
+                        _hover={{ backgroundColor: "rgb(243, 224, 191)" }}
+                        width={"100px"}
+                        onClick={() => {
+                          handlegitlink(e.github);
+                        }}
+                      >
+                        Github
+                      </Button>
+                    </div>
+                    <div>
+                      <Button
+                        colorScheme="orange"
+                        variant="outline"
+                        width={"100px"}
+                        fontSize={{ base: "md", lg: "lg" }}
+                        _hover={{ backgroundColor: "rgb(243, 224, 191)" }}
+                        onClick={() => {
+                          handlevercelLink(e.netlify);
+                        }}
+                      >
+                        Link
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+                <div className={pro.pro_right}>
+                  <img src={e.image} alt="images" />
+                </div>
               </div>
-              <div className={pro.stack}> TecStack: 
-                {e.tec?.map((x, i) => (
-                  <Code colorScheme={arr[i]} children={x} />
-                ))}
+            ) : (
+              <div>
+                <div className={pro.pro_right}>
+                  <img src={e.image} alt="images" />
+                </div>
+                <div className={pro.pro_left}>
+                  <h1 className={pro.logos}>{e.title}</h1>
+                  <div className={pro.des}>
+                    <p>{e.description}</p>
+                  </div>
+                  <div className={pro.stack}>
+                    {" "}
+                    TecStack:
+                    {e.tec?.map((x, i) => (
+                      <Code key={i + 1} colorScheme={arr[i]} children={x} />
+                    ))}
+                  </div>
+                  <div className={pro.drawer}>
+                    <div>
+                      <Prodrawer title={e.title} fullImg={e.fullImg} />
+                    </div>
+                    <div>
+                      <Button
+                        variant="outline"
+                        colorScheme="orange"
+                        fontSize={{ base: "md", md: "lg" }}
+                        _hover={{ backgroundColor: "rgb(243, 224, 191)" }}
+                        onClick={() => {
+                          handlegitlink(e.github);
+                        }}
+                      >
+                        Github
+                      </Button>
+                    </div>
+                    <div>
+                      <Button
+                        colorScheme="orange"
+                        variant="outline"
+                        fontSize={{ base: "md", lg: "lg" }}
+                        _hover={{ backgroundColor: "rgb(243, 224, 191)" }}
+                        onClick={() => {
+                          handlevercelLink(e.netlify);
+                        }}
+                      >
+                        Link
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className={pro.pro_right}>
-              <img src={e.image} alt="images" />
-            </div>
+            )}
           </div>
         ))}
       </div>
@@ -233,32 +332,32 @@ export default Project;
 //       gap="4px"
 //     >
 //       <Prodrawer title={e.title} fullImg={e.fullImg} />
-//       <Button
-//         variant="outline"
-//         colorScheme="blue"
-//         className="project-github-link"
-//         margin="0"
-//         fontSize={{ base: "md", md: "lg" }}
-//         padding={{ base: "10px", md: "14px" }}
-//         onClick={() => {
-//           handlegitlink(e.github);
-//         }}
-//       >
-//         Github
-//       </Button>
-//       <Button
-//         colorScheme="blue"
-//         variant="outline"
-//         margin="0"
-//         className="project-deployed-link"
-//         fontSize={{ base: "md", lg: "lg" }}
-//         padding={{ base: "10px", md: "14px" }}
-//         onClick={() => {
-//           handlevercelLink(e.netlify);
-//         }}
-//       >
-//         Link
-//       </Button>
+// <Button
+//   variant="outline"
+//   colorScheme="blue"
+//   className="project-github-link"
+//   margin="0"
+//   fontSize={{ base: "md", md: "lg" }}
+//   padding={{ base: "10px", md: "14px" }}
+//   onClick={() => {
+//     handlegitlink(e.github);
+//   }}
+// >
+//   Github
+// </Button>
+// <Button
+//   colorScheme="blue"
+//   variant="outline"
+//   margin="0"
+//   className="project-deployed-link"
+//   fontSize={{ base: "md", lg: "lg" }}
+//   padding={{ base: "10px", md: "14px" }}
+//   onClick={() => {
+//     handlevercelLink(e.netlify);
+//   }}
+// >
+//   Link
+// </Button>
 //     </Flex>
 //   </CardFooter>
 // </Card> */}

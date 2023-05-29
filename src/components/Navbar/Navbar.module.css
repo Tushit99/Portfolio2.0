@@ -24,6 +24,10 @@
 } 
 
 /* button */
+.side_bar{
+  display: none; 
+}
+/* =====--==== */
 
 .btn {
   position: relative;
@@ -132,9 +136,10 @@
     padding-right: 20px; 
   }
   
-  .topoption > div {
-    /* margin: 10px 10px; */
+  .topoption > div {  
     cursor: pointer; 
+    margin: 0; 
+    padding: 0; 
     font-weight: bolder; 
     font-size: 20px;
     letter-spacing: 1px;
@@ -174,8 +179,39 @@
   
   /* button  */  
   
+.ham span{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;  
+  background: #cdcdcd;
+  border-radius: 3px;
+}
  
 
+@media screen and (min-width: 100px) and (max-width: 900px) {
+  .topoption{
+    display: none; 
+  }  
+
+  .side_bar{
+    display: grid;   
+  }
+
+} 
+
+
+@media screen and (min-width: 100px) and (max-width: 400px) {
+  .topoption{
+    display: none; 
+  }  
+
+  .side_bar{
+    display: grid;   
+  }
+
+}
 
 
 

@@ -6,6 +6,8 @@ import Home from './components/home/Home';
 import { ThemeContext } from './context/Contextprovider';
 import Skills from './components/Skills/Skills';
 import Project from './components/Project/Project';
+import Github from './components/Github/Github';
+import { Contact } from './components/Contacts/Contacts';
 
 function App() { 
   const { theme } = useContext(ThemeContext);
@@ -22,6 +24,9 @@ function App() {
       <About />  
       <Skills /> 
       <Project /> 
+      <Github />  
+      <Contact />  
+      
     </div>
   );
 }

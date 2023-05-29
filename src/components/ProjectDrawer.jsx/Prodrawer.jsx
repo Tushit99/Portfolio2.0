@@ -18,9 +18,13 @@ const Prodrawer = ({ fullImg, title }) => {
   const btnRef = useRef();
 
   return (
-    <div style={{ backgroundColor: "black" }}>
-      <Button 
+    <div>
+      <Button
+        variant="outline"
+        colorScheme="orange"
+        _hover={{ backgroundColor: "rgb(243, 224, 191)" }}
         onClick={onOpen}
+        w={"100%"}
       >
         View
       </Button>
@@ -48,9 +52,9 @@ const Prodrawer = ({ fullImg, title }) => {
           >
             {fullImg.map((z) => (
               <Box
-                backgroundColor="rgba(35, 40, 84, 0.614)"
+                backgroundColor="rgba(209, 174, 81, 0.511)"
                 borderWidth="2px"
-                borderColor="rgb(0, 9, 104)"
+                borderColor="rgb(255, 187, 0)"
                 borderRadius="lg"
                 padding="20px"
               >

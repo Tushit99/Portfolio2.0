@@ -1,98 +1,200 @@
-
-.box{
-  padding: 30px ;  
-  width: 95%;  
-  margin: auto; 
-} 
-
-.projects{
-  display: flex;  
+.box {
+  padding: 30px;
+  width: 95%;
+  margin: auto;
 }
 
-.projects *{
-  margin: auto; 
+.projestbox {
+  display: grid;
+  gap: 14px;
 }
 
-.projects .pro_left{ 
-  padding: 10px; 
-  border: 2px solid black; 
-  flex: 4;
-} 
-
-.less{
-  margin-top: 1rem; 
-} 
-
-.pro_right{
-  flex: 3;
+.projects > div {
+  display: flex;
+  margin-top: 2rem;
 }
 
-.pro_right img{
-  transform: scale(0.8); 
+.projects * {
+  margin: auto;
 }
 
-.logos{
-  max-width: 150px;   
-  /* border: 2px solid black;  */
-  height: 50px;    
-  object-fit: contain; 
-  padding: 0; 
-} 
-
-.stack{
-  text-align: left; 
-}
-
-.stack *{ 
-  margin-left: 10px ;
-}
-
-/* ===================box========================= */ 
-
-.button-30 {
-  align-items: center;
-  appearance: none;
-  background-color: #FCFCFD;
-  border-radius: 4px;
-  border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #36395A;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
-  height: 48px;
-  justify-content: center;
-  line-height: 1;
-  list-style: none;
+.projects .pro_left {
+  border-radius: 20px;
+  background-color: rgba(101, 122, 138, 0.114);
   overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
   position: relative;
   text-align: left;
-  text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow,transform;
-  font-size: 18px;
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+  grid-area: boxtwo;
+  flex: 4;
 }
 
-.button-30:focus {
-  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+.setback {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.5;
+  width: 100%;
+  padding: 0;
+  z-index: -2;
+  height: 100%;
 }
 
-.button-30:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  transform: translateY(-2px);
+.less {
+  margin-top: 1rem;
 }
 
-.button-30:active {
-  box-shadow: #D6D6E7 0 3px 7px inset;
-  transform: translateY(2px);
+.pro_right {
+  flex: 3;
+  grid-area: boxone;
+}
+
+.pro_right img { 
+  transition: all 1s;
+  transform: scale(0.8); 
+} 
+
+.pro_right img:hover{
+  transform: scale(1);
+}
+
+/* ============== Top-Name ================  */
+
+h1 {
+  font-size: 2em;
+  font-weight: bolder;
+  text-decoration: underline;
+  @media (max-width: 768px) {
+    font-size: 1.3em;
+  }
+}
+
+.logos {
+  font-style: italic;
+  text-transform: uppercase;
+  color: transparent;  
+  -webkit-text-stroke: rgb(240, 240, 240);
+  -webkit-text-stroke-width: 1px;
+  text-shadow: 2px 2px 10px rgb(77, 64, 54);
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  letter-spacing: 0.2em;
+  animation: flicker 0.5s ease-in-out infinite alternate;
+  width: 100%; 
+  &:hover {
+    color: rgb(255, 255, 255);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.5;
+    text-shadow: 2px 2px 10px rgb(83, 69, 57);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 2px 2px 20px rgb(78, 65, 55);
+  }
 }
 
 /* =================== */
 
+.stack {
+  text-align: left;
+  /* border: 2px solid black;  */
+  width: 100%;
+  font-size: large;
+  letter-spacing: 1px;
+}
+
+.stack * {
+  margin-left: 10px;
+  font-size: medium;
+  text-transform: uppercase;
+}
+
+.des {
+  font-size: large;
+}
+
+.drawer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 2px solid black;   */
+  width: 100%;
+  margin: 10px auto auto auto;
+  padding: 0;
+}
+
+.drawer * {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.drawer button {
+  width: 100px;
+}
+
+/* ===================box========================= */
+/* =================== */
+
+@media screen and (min-width: 550px) and (max-width: 920px) {
+  .projects > div {
+    display: grid;
+  }
+
+  .projects .pro_left {
+    background-color: unset;
+  }
+
+  .projects > div {
+    background-color: rgba(101, 122, 138, 0.114);
+    border-radius: 20px;
+    display: grid;
+    grid-template-areas:
+      "boxone boxone"
+      "boxtwo boxtwo";
+    padding: 10px 30px;
+  }
+
+  .projects > div:hover {
+    background-color: rgba(101, 122, 138, 0.215);
+  }
+
+  .drawer button {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 150px) and (max-width: 550px) {
+  .projects > div {
+    display: grid;
+  }
+
+  .projects .pro_left {
+    background-color: unset;
+  }
+
+  .projects > div {
+    background-color: rgba(101, 122, 138, 0.114);
+    border-radius: 20px;
+    display: grid;
+    grid-template-areas:
+      "boxone boxone"
+      "boxtwo boxtwo";
+    padding: 10px 30px;
+  }
+
+  .projects > div:hover {
+    background-color: rgba(101, 122, 138, 0.215);
+  }
+  .drawer button {
+    width: 90%;
+  }
+}

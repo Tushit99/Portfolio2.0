@@ -17,21 +17,23 @@ const Github = () => {
             </Heading>
             <div className={git.grid}>
                 <img
-                    id="github-stats-card"
+                    style={{backgroundColor:"rgb(54,57,63)"}}
                     width={"100%"}
-                    src="https://github-readme-stats.vercel.app/api?username=Tushit99&show_icons=true&theme=highcontrast&hide_border=true"
+                    height={"160%"} 
+                    src="https://github-readme-stats.vercel.app/api?username=Tushit99&show_icons=true&theme=slateorange&hide_border=true"
                     alt="git2"
                 />
                 {/* <img
                     id="github-streak-stats"
                     width={"100%"}
-                    src="https://github-readme-streak-stats.herokuapp.com?user=Tushit99&theme=highcontrast&border_radius=5&hide_border=true"
+                    src="https://github-readme-streak-stats.herokuapp.com?user=Tushit99&theme=slateorange&border_radius=5&hide_border=true"
                     alt="git3"
                 /> */}
                 <img
-                    id="github-top-langs"
-                    width={"100%"}
-                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tushit99&exclude_repo=github-readme-stats&layout=compact&theme=highcontrast&hide=shell&hide_border=true"
+                    style={{backgroundColor:"rgb(54,57,63)"}}  
+                    width={"100%"} 
+                    height={"100%"} 
+                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Tushit99&exclude_repo=github-readme-stats&layout=compact&theme=slateorange&hide=shell&hide_border=true"
                     alt="git1"
                 />
                 {/* <img 
@@ -42,7 +44,7 @@ const Github = () => {
                 /> */}
             </div>
             <div className={git.calandar}>
-                <GitHubCalendar username="Tushit99" />
+                <GitHubCalendar username="Tushit99" colorScheme="light" />
             </div>
             {/* <img src="https://github-profile-trophy.vercel.app/?username=tushit99&theme=github-dark" className={git.trophy} alt="tushit99" /> */}
         </div>

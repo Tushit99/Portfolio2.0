@@ -98,7 +98,7 @@
   }
   .sklimg div{
     width: 140px;    
-    height: 90px;    
+    height: 110px;    
   } 
 }
 
@@ -108,7 +108,7 @@
     grid-template-columns: repeat(2,1fr); 
   }
   .sklimg div{
-    width: 120px;  
+    width: 90%;  
     height: 120px;     
   } 
 }
