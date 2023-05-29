@@ -7,11 +7,11 @@ import day from "./imgbox/daypart.jpg";
 import night from "./imgbox/nightpart.jpg";
 
 
-const Home = () => {
+const Home = ({ home }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div className={style.home} style={{ backgroundImage: `url(${theme ? day : night})` }}>  
+    <div className={style.home} ref={home} style={{ backgroundImage: `url(${theme ? day : night})` }}>  
       <div className={style.back} >
         <div className={style.box} style={{ color: "white" }}>
           <div id={style.homeintro}>

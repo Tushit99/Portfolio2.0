@@ -6,7 +6,7 @@ import mypic from "../Image/tushitgo.png";
 import { ThemeContext } from "../../context/Contextprovider";
 import bgimg from "../Image/box.png"
 
-const About = () => {
+const About = ({ about }) => {
   const { theme } = useContext(ThemeContext);
 
   const handleOpenLink = () => {
@@ -16,7 +16,7 @@ const About = () => {
   };
 
   return (
-    <div id="about" >
+    <div id="about" ref={about}  >
       <div className={abt.box}>
         <h5> Get to Know </h5>
         <Heading as="h2" size="2xl" fontWeight={400}>

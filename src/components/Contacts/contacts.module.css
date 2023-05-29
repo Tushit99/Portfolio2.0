@@ -2,7 +2,7 @@
   margin: auto;
   display: flex;
   /* border: 4px solid green;  */
-  width: 100%; 
+  width: 100%;   
 }
 
 .backbox{  
@@ -13,6 +13,10 @@
   -o-background-size:cover;
   background-size:cover;
   background-position:center; 
+}
+
+.contact_top{
+  padding-bottom: 20px;
 }
 
 .one {
@@ -141,7 +145,9 @@
   }
 }
 
-
+.last{
+  margin: 20px auto; 
+}
 
 /* done */
 /* ============================================= */ 

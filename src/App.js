@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import './App.css';
 import About from './components/About/About';
 import Navbar from './components/Navbar/Navbar';
@@ -11,6 +11,11 @@ import { Contact } from './components/Contacts/Contacts';
 
 function App() { 
   const { theme } = useContext(ThemeContext);
+  let home = useRef();
+  let about = useRef();
+  let skill = useRef();
+  let contact = useRef();
+  let project = useRef(); 
 
 
   return (
@@ -19,13 +24,13 @@ function App() {
       backgroundColor: theme ? "rgb(227,231,235)" : "rgb(53,53,53)"  
      }}
       >
-      <Navbar />   
-      <Home /> 
-      <About />  
-      <Skills /> 
-      <Project /> 
+      <Navbar home={home} about={about} skill={skill} contact={contact} project={project} />   
+      <Home home={home} /> 
+      <About about={about} />  
+      <Skills skill={skill} /> 
+      <Project project={project} /> 
       <Github />  
-      <Contact />  
+      <Contact contact={contact} />  
       
     </div>
   );
